@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Uppgift 1 -->
+    <p id="demo">gå härifrån</p> 
+
+
+    <!-- Uppgift 3 -->
+    <img id="myImage" src="cvprofilepicture_edited.jpg" width="20%" height="20%" alt="En bild">
+    <button onclick="changeImage()">Byt bild</button>
+
+
+    <!-- Uppgift 5 -->
+    <form>
+        <label for="textfält">Skriv något här:</label>
+        <input type="text" id="textfält" name="textfält"><br><br>
+        <button type="button" onclick="visaText()">Visa texten</button>
+    </form>
+
+
+
+    <!-- JavaScript -->
+    <script>
+        
+        //Uppgift 1. Skriv en funktion som tar emot två tal som parametrar och returnerar deras summa    
+        function nummer(num1, num2)
+        {
+            return num1 + num2;
+        }
+        console.log(nummer(1,2)); // 3
+
+        
+        //Uppgift 2. Använd metoden GetElementByID för att hitta <p> element med id="demo" och ändra dess text till hej
+         document.getElementById("demo").innerHTML = "hej";
+
+        
+        //Uppgift 3. Skriv en funktion som kan ändra värdet på en bilds src-attribut till "bild.jpg"        
+        function changeImage() 
+            {
+                document.getElementById("myImage").src = "bild.jpg";
+            }
+
+        
+        //Uppgift 4. Skriv en funktion som tar en array av tal och returnerar en ny array där varje element i den ursprungliga arrayen har blivit subtraherat med 1.   
+        function subtraheraEtt(arr) 
+        {
+            var nyArray = [];
+            for (var i = 0; i < arr.length; i++) 
+            {
+                nyArray.push(arr[i] - 1);
+            }
+            return nyArray;
+        }
+        console.log(subtraheraEtt([1, 2, 3, 4, 5])); // [0, 1, 2, 3, 4]
+
+        
+        //Uppgift 5. Skapa en HTML-formulär med ett textfält och en knapp. När användaren klickar på knappen ska innehållet i textfältet visas i en alert-dialogruta.  
+        function visaText() {
+            var text = document.getElementById("textfält").value;
+            alert(text); 
+        }
+
+    </script>
+</body>
+</html>
